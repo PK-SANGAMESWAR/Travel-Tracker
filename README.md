@@ -20,8 +20,8 @@ A web application that allows users to **track, visualize, and document** the co
 
 #### **1️⃣ Clone the Repository**  
 ```sh
-git clone https://github.com/your-username/Travel-Tracker.git  
-cd Travel-Tracker
+git clone [ https://github.com/your-username/Travel-Tracker.git  
+cd Travel-Tracker](https://github.com/PK-SANGAMESWAR/Travel-Tracker.git)
 ```
 
 #### **2️⃣ Install Dependencies**  
