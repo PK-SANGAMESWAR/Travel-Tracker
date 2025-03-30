@@ -1,0 +1,661 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+/* Update header to match the light blue theme */
+header {
+  background-color: #3498db; /* Light blue color matching buttons */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Form Styles */
+.add-country-form {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.add-country-form h2 {
+  margin-bottom: 1rem;
+  color: #3498db;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="date"] {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Improving button visibility and styling */
+button[type="submit"] {
+  background-color: #3498db; /* Light blue color */
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: auto;
+  min-width: 150px;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9; /* Slightly darker blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Improving file upload button */
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border: 2px dashed #3498db;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+  background-color: #e9ecef;
+  border-color: #2980b9;
+}
+
+/* Map Styles */
+.map-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  height: 400px;
+}
+
+.ag-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.ag-canvas_svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* SVG Map Styling */
+.ag-canvas_svg path {
+  fill: #e0e0e0;
+  stroke: #fff;
+  stroke-width: 0.5;
+  transition: fill 0.3s;
+}
+
+.ag-canvas_svg path:hover {
+  fill: #bdc3c7;
+}
+
+/* Update the map styling to ensure visited countries are clearly visible */
+.ag-canvas_svg path.visited {
+  fill: #e74c3c !important; /* Changed to a more vibrant red for better visibility */
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+/* Enhanced country image styling */
+.country-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.country-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.country-image img:hover {
+  transform: scale(1.08);
+}
+
+/* Improved stats container styling */
+.stats-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 5px solid #e74c3c;
+}
+
+.stats-container h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  position: relative;
+  display: inline-block;
+}
+
+.stats-container h2:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: #e74c3c;
+  bottom: -10px;
+  left: 25%;
+}
+
+.highlight {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 2.5rem;
+  display: block;
+  margin: 1rem 0;
+}
+
+/* Enhanced gallery styling */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gallery-title {
+  margin: 2rem 0 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.country-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.country-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.country-header {
+  padding: 1.5rem;
+  background-color: #3498db; /* Light blue color */
+  color: white;
+  position: relative;
+}
+
+.country-header h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.country-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.no-countries {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Autocomplete Styles */
+.autocomplete {
+  position: relative;
+  flex: 1;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #ddd;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-items div:hover {
+  background-color: #f1f1f1;
+}
+
+.autocomplete-active {
+  background-color: #3498db !important;
+  color: white;
+}
+
+/* Login and Register Page Styling */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  text-align: center;
+  color: #3498db;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Center the register link - updated styling */
+.container p {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.container a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+/* Base body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #fff; /* White text for better contrast on black */
+  background: #121212; /* Dark gray/almost black background */
+  min-height: 100vh;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Login/register pages keep the gradient */
+body.login-page, body.register-page {
+  background: linear-gradient(135deg, #2c3e50, #4a6572);
+  color: #333;
+}
+
+/* Dashboard page styling */
+.dashboard-page {
+  background: #121212; /* Dark gray/almost black background */
+  color: #fff;
+}
+
+/* Update header to match dark theme - REMOVE THIS BLOCK or update it */
+header {
+  background-color: #3498db; /* Deep blue that works with black */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Update headings for better visibility on dark background */
+h1, h2, h3 {
+  color: #fff;
+}
+
+/* Update gallery title for dark theme */
+.gallery-title {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Update accent colors to match new dark theme */
+.country-header, button[type="submit"], .highlight, .container h1, .container a {
+  color: #3b82f6; /* Bright blue that pops on dark background */
+}
+
+button[type="submit"], .country-header, .autocomplete-active {
+  background-color: #1e3a8a; /* Deep blue */
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #1e40af; /* Slightly darker blue on hover */
+}
+
+/* Update stats container for dark theme */
+.stats-container {
+  border-top: 5px solid #3b82f6; /* Bright blue */
+}
+
+.stats-container h2:after {
+  background-color: #3b82f6; /* Bright blue */
+}
+
+.highlight {
+  color: #3b82f6; /* Bright blue */
+}
+
+/* Making the container responsive for all devices */
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced responsive layout */
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 30px;
+    margin: 50px auto;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+  
+  .country-image {
+    height: 180px;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  header {
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .user-info {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 8px;
+  }
+  
+  .map-container {
+    height: 250px;
+  }
+  
+  .country-image {
+    height: 150px;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .add-country-form h2, .stats-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .highlight {
+    font-size: 2rem;
+  }
+  
+  button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Updating accent colors to match new background */
+.country-header, button[type="submit"], .highlight, .gallery-title, .container h1, .container a, .form-group input:focus, .autocomplete-active {
+  color: #3498db; /* Light blue color */
+}
+
+button[type="submit"], .country-header, .autocomplete-active {
+  background-color: #3498db; /* Light blue color */
+  color: white; /* Ensuring text is white for contrast */
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9; /* Slightly darker blue on hover */
+}
+
+.form-group input:focus {
+  border-color: #3498db; /* Light blue color */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Updating other elements to match the new color scheme */
+.add-country-form h2 {
+  margin-bottom: 1rem;
+  color: #3498db; /* Light blue color */
+}
+
+.file-upload-label {
+  border: 2px dashed #3498db; /* Light blue color */
+}
+
+.file-upload-label:hover {
+  border-color: #2980b9; /* Slightly darker blue on hover */
+}
+
+.stats-container {
+  border-top: 5px solid #3498db; /* Light blue color */
+}
+
+.stats-container h2:after {
+  background-color: #3498db; /* Light blue color */
+}
+
+.highlight {
+  color: #3498db; /* Light blue color */
+}

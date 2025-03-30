@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+<body class="login-page"></body>
+<body class="register-page"></body>
+<div class="container">
+    <h1>Register</h1>
+    <% if (locals.error) { %>
+        <div class="error-message"><%= error %></div>
+    <% } %>
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="/login">Login</a></p>
+</div>
+
+<%- include("partials/footer.ejs") %>
