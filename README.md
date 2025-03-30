@@ -1,6 +1,6 @@
 
 ## **Travel-Tracker** 🌍  
-A web application that allows users to **track, visualize, and document** the countries they have visited on an interactive world map.  
+A web application that allows users to **track,  and document** the countries they have visited on an interactive world map.  
 
 
 
