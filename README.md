@@ -79,7 +79,28 @@ Open your browser and navigate to:
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap  
 - **Backend:** Node.js, Express.js  
 - **Database:** PostgreSQL
-  
+
+ ### 📂 Folder & File Overview
+ Travel-Tracker/
+│── node_modules/        # Installed dependencies (via npm install)
+│
+├── public/              # Public assets (frontend resources)
+│   ├── scripts/         # JavaScript files for frontend functionality
+│   ├── styles/          # CSS stylesheets for UI design
+│   ├── uploads/         # Folder for storing uploaded images
+│
+├── views/               # EJS template files for rendering pages
+│   ├── partials/        # Reusable EJS components (headers, footers, etc.)
+│   ├── index.ejs        # Homepage template
+│   ├── login.ejs        # Login page template
+│   ├── register.ejs     # Registration page template
+│   ├── viewspartials/   # (Possible duplicate or misnamed folder)
+│
+├── index.js             # Main server file (Node.js & Express backend)
+├── package.json         # Project configuration & dependencies
+├── package-lock.json    # Dependency tree lock file
+
+ 
 
 ### **📝 Contributing**  
 We welcome contributions! To contribute:  
